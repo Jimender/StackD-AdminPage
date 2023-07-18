@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./DashBoard.css";
 
 export default function DashBoard() {
   const [ads, setAds] = useState([]);
@@ -38,14 +39,24 @@ export default function DashBoard() {
 
     fetchData();
   }, []);
+
   var count = 1;
+
   return (
     <div>
+      <span className="dashboard--heading">Dashboard_</span>
       {viewTitles && (
-        <div>
+        <div className="container">
           {titles.map((title) => (
-            <div onClick={handleTitleClick.bind(this, count - 1)}>
-              <div> {count++ + " " + title} </div> <br />
+            <div
+              onClick={handleTitleClick.bind(this, count - 1)}
+              className="dashboard-title" // Apply the CSS class
+              key={title}
+            >
+              <div>
+                <a className="title--link">{count++ + ". " + title}</a>
+              </div>{" "}
+              <br />
             </div>
           ))}
         </div>
@@ -53,12 +64,17 @@ export default function DashBoard() {
       {viewAds && (
         <div>
           {ads[adInd].map((adStack) => (
-            <div onClick={handleAdClick}>
-              <div> {adStack.map(ad => (
-                <div>
-                  {ad} <br/>
-                </div>
-              ))} </div> <br />
+            <div onClick={handleAdClick} key={adStack} className="dashboard-ad">
+              <div>
+                {adStack.map((ad, index) => (
+                  <div key={index} className="dashboard-ad-item">
+                    {" "}
+                    {/* Apply CSS class */}
+                    {ad} <br />
+                  </div>
+                ))}
+              </div>{" "}
+              <br />
             </div>
           ))}
         </div>

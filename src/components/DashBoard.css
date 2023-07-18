@@ -1,0 +1,30 @@
+.container{
+    margin-top: 5rem;
+}
+
+.dashboard--heading{
+    font-size: 5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    color: #27374D;
+    transition: all 0.3s ease-in-out;
+}
+
+.dashboard--heading:hover{
+    letter-spacing: 0.5rem;
+}
+
+.dashboard-title{
+    text-align: left;
+    margin-left: 4em;
+}
+
+.title--link{
+    cursor: pointer;
+    text-decoration: none;
+    color: #7895CB;
+}
+
+.title--link:hover{
+    color:#4A55A2;
+}
